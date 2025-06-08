@@ -5,7 +5,7 @@ from process import process_img
 
 # ===== 路径设置 =====
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-IMAGE_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'images'))
+IMAGE_DIR = os.path.abspath(os.path.join(BASE_DIR, '.', 'images'))
 OUTPUT_DIR = os.path.join(BASE_DIR, 'output')
 OUTPUT_JSON = os.path.join(BASE_DIR, 'output_results.json')
 OUTPUT_IMG_DIR = os.path.join(BASE_DIR, 'output', 'images')  
