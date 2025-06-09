@@ -27,7 +27,7 @@ import onnxruntime as ort
 # 初始化模型
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, 'models', 'best.onnx')
-session = ort.InferenceSession(MODEL_PATH)
+session = ort.InferenceSession(MODEL_PATH, providers=['CPUExecutionProvider'])
 input_name = session.get_inputs()[0].name
 img_size = 640
 
@@ -103,7 +103,9 @@ def process_img(img_path):
 #因此提交时请根据情况删除不必要的额外代码
 #
 if __name__=='__main__':
-    imgs_folder = './images/'
+    # imgs_folder = './images/'
+    print("保存路径为：", os.getcwd())
+    imgs_folder = os.path.join(os.path.dirname(__file__), 'images')
     img_paths = os.listdir(imgs_folder)
     def now():
         return int(time.time()*1000)
@@ -114,7 +116,9 @@ if __name__=='__main__':
     for img_path in img_paths:
         print(img_path,':')
         last_time = now()
-        result = process_img(imgs_folder+img_path)
+        # result = process_img(imgs_folder+img_path)
+        result = process_img(os.path.join(imgs_folder, img_path))
+        
         run_time = now() - last_time
         print('result:\n',result)
         print('run time: ', run_time, 'ms')

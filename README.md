@@ -46,7 +46,7 @@ project-root/
 ├── models/
 │   └── best.onnx         # 训练好的 YOLOv8 ONNX 模型
 ├── src/
-│   └── images/           # ✅ 测试图像请放在此目录
+│   └── images/           #  测试图像请放在此目录
 ├── output/
 │   ├── output_results.json  # 所有检测结果 JSON 输出
 │   └── images/              # 带检测框的图像输出（如果想要图像输出可将代码图像输出代码取消注释)
