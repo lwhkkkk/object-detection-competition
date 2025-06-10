@@ -8,3 +8,4 @@ pandas
 matplotlib
 PyYAML
 requests
+onnxruntime
